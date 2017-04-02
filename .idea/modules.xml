@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/starscream.iml" filepath="$PROJECT_DIR$/.idea/modules/starscream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/starscream_main.iml" filepath="$PROJECT_DIR$/.idea/modules/starscream_main.iml" group="starscream" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/starscream_test.iml" filepath="$PROJECT_DIR$/.idea/modules/starscream_test.iml" group="starscream" />
+    </modules>
+  </component>
+</project>

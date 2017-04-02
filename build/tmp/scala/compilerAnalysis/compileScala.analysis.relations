@@ -1,0 +1,13 @@
+products:
+   src/main/scala/com/paddyshiel/starscream/Application.scala -> build/classes/main/Application$.class
+   src/main/scala/com/paddyshiel/starscream/Application.scala -> build/classes/main/Application.class
+binary dependencies:
+   src/main/scala/com/paddyshiel/starscream/Application.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/rt.jar
+   src/main/scala/com/paddyshiel/starscream/Application.scala -> /Users/pashiel/.gradle/caches/modules-2/files-2.1/com.typesafe.akka/akka-actor_2.12/2.5.0-RC2/cc120e7f34efd2d70161f55fac1c7c936368ec39/akka-actor_2.12-2.5.0-RC2.jar
+   src/main/scala/com/paddyshiel/starscream/Application.scala -> /Users/pashiel/.gradle/caches/modules-2/files-2.1/com.typesafe/config/1.3.1/2cf7a6cc79732e3bdf1647d7404279900ca63eb0/config-1.3.1.jar
+   src/main/scala/com/paddyshiel/starscream/Application.scala -> /Users/pashiel/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.1/dd235d04037dc6f4b6090257872dd35359a563ce/scala-library-2.12.1.jar
+source dependencies:
+external dependencies:
+class names:
+   src/main/scala/com/paddyshiel/starscream/Application.scala -> Application
+   src/main/scala/com/paddyshiel/starscream/Application.scala -> Application$

@@ -1,0 +1,28 @@
+group 'com.paddyshiel'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'scala'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies{
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile "org.scala-lang:scala-library:2.12.1"
+
+    compile 'com.typesafe.akka:akka-cluster_2.12:2.5.0-RC2'
+    compile 'com.typesafe.akka:akka-cluster-metrics_2.12:2.5.0-RC2'
+
+    testCompile "junit:junit:4.11"
+}
+
+task run(type: JavaExec, dependsOn: classes) {
+    if (project.hasProperty("Args")) {
+        args Eval.me(Args)
+    }
+
+    main = 'Application'
+    classpath sourceSets.main.runtimeClasspath
+    classpath configurations.runtime
+}
