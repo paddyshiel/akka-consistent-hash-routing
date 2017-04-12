@@ -5,14 +5,28 @@ apply plugin: 'scala'
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
 }
 
 dependencies{
-    compile 'org.slf4j:slf4j-api:1.7.5'
-    compile "org.scala-lang:scala-library:2.12.1"
+    // Scala Library
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.1'
 
-    compile 'com.typesafe.akka:akka-cluster_2.12:2.5.0-RC2'
-    compile 'com.typesafe.akka:akka-cluster-metrics_2.12:2.5.0-RC2'
+    // Logging Dependencies
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+
+    // Akka Dependencies
+    compile group: 'com.typesafe.akka', name: 'akka-cluster_2.12', version: '2.4.17'
+    compile group: 'com.typesafe.akka', name: 'akka-cluster-tools_2.12', version: '2.4.17'
+    compile group: 'com.typesafe.akka', name: 'akka-cluster-metrics_2.12', version: '2.4.17'
+    compile group: 'com.typesafe.akka', name: 'akka-slf4j_2.12', version: '2.4.17'
+
+    // RabbitMq / Messaging Dependencies
+    compile group: 'com.github.sstone', name: 'amqp-client_2.11', version: '1.6-SNAPSHOT'
 
     testCompile "junit:junit:4.11"
 }

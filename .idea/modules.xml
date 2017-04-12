@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/starscream.iml" filepath="$PROJECT_DIR$/.idea/modules/starscream.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/starscream_main.iml" filepath="$PROJECT_DIR$/.idea/modules/starscream_main.iml" group="starscream" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/starscream_test.iml" filepath="$PROJECT_DIR$/.idea/modules/starscream_test.iml" group="starscream" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feeds-routing.iml" filepath="$PROJECT_DIR$/.idea/modules/feeds-routing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feeds-routing_main.iml" filepath="$PROJECT_DIR$/.idea/modules/feeds-routing_main.iml" group="feeds-routing" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feeds-routing_test.iml" filepath="$PROJECT_DIR$/.idea/modules/feeds-routing_test.iml" group="feeds-routing" />
     </modules>
   </component>
 </project>
