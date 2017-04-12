@@ -1,7 +1,6 @@
 package com.sportsbet.feeds.routing.messaging
 
 import akka.actor.ActorRef
-import akka.routing.ConsistentHashingRouter.ConsistentHashableEnvelope
 import com.sportsbet.feeds.routing.cluster.ClusterSingletonManagementWrapper
 import com.sportsbet.feeds.routing.model.Event
 
@@ -17,7 +16,7 @@ trait MessageConsumer {
 
   def routeDummyMessages(numberOfMessages: Int, messageIntervalInMillis: Int, producerId: String) = {
     (1 to numberOfMessages).foreach(sequenceNum => {
-      val event = createMockEvent(3, sequenceNum, producerId)
+      val event = createMockEvent(2, sequenceNum, producerId)
       Thread.sleep(messageIntervalInMillis)
       messageRoutingProxy ! event
     })

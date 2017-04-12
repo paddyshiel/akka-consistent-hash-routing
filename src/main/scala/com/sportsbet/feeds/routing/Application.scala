@@ -16,10 +16,13 @@ object Application {
 
     implicit val clusterSingletonManagementWrapper: ClusterSingletonManagementWrapper = new ClusterSingletonManagerWrapper
 
-    //Thread.sleep(5000);
-
     val nodeId = s"Node ${config.getString("akka.remote.netty.tcp.port").toInt - 2550}"
     val mockMessageConsumer = new MockMessageConsumer()
+
+
+
+    Thread.sleep(1000);
+
     mockMessageConsumer.routeDummyMessages(1000, 1000, nodeId)
 
   }
