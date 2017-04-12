@@ -16,7 +16,7 @@ trait MessageConsumer {
 
   def routeDummyMessages(numberOfMessages: Int, messageIntervalInMillis: Int, producerId: String) = {
     (1 to numberOfMessages).foreach(sequenceNum => {
-      val event = createMockEvent(2, sequenceNum, producerId)
+      val event = createMockEvent(1, sequenceNum, producerId)
       Thread.sleep(messageIntervalInMillis)
       messageRoutingProxy ! event
     })

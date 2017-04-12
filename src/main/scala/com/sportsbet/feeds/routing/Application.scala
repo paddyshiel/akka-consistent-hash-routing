@@ -1,10 +1,13 @@
 package com.sportsbet.feeds.routing
 
 import akka.actor.ActorSystem
+import akka.cluster.Cluster
 import com.sportsbet.feeds.routing.cluster.{ClusterSingletonManagementWrapper, ClusterSingletonManagerWrapper}
 import com.sportsbet.feeds.routing.messaging.MockMessageConsumer
 import com.typesafe.config.ConfigValueFactory.fromAnyRef
 import com.typesafe.config.{Config, ConfigFactory}
+
+import scala.concurrent.duration.Duration
 
 object Application {
 
@@ -14,14 +17,18 @@ object Application {
 
     implicit val system = ActorSystem(clusterName, config)
 
+    Cluster(system).registerOnMemberRemoved {
+      system.registerOnTermination(System.exit(-1))
+      system.scheduler.scheduleOnce(Duration(2, "seconds"))(System.exit(-1))(system.dispatcher)
+      system.shutdown()
+    }
+
     implicit val clusterSingletonManagementWrapper: ClusterSingletonManagementWrapper = new ClusterSingletonManagerWrapper
 
     val nodeId = s"Node ${config.getString("akka.remote.netty.tcp.port").toInt - 2550}"
     val mockMessageConsumer = new MockMessageConsumer()
 
-
-
-    Thread.sleep(1000);
+    Thread.sleep(10000);
 
     mockMessageConsumer.routeDummyMessages(1000, 1000, nodeId)
 
