@@ -1,5 +1,6 @@
 # Project files
 .idea
+.idea/*
 
 # Compiled class file
 build
@@ -9,3 +10,5 @@ out
 # Log file
 *.log
 
+# Node dependencies
+src/main/js/node_modules

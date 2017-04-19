@@ -2,8 +2,8 @@ package com.sportsbet.feeds.routing
 
 import akka.actor.ActorSystem
 import akka.cluster.Cluster
-import com.sportsbet.feeds.routing.cluster.{ClusterSingletonManagementWrapper, ClusterSingletonManagerWrapper}
-import com.sportsbet.feeds.routing.messaging.MockMessageConsumer
+import com.sportsbet.feeds.routing.cluster.ClusterSingletonManagementWrapper
+import com.sportsbet.feeds.routing.messaging.MessageConsumer
 import com.typesafe.config.ConfigValueFactory.fromAnyRef
 import com.typesafe.config.{Config, ConfigFactory}
 
@@ -23,10 +23,9 @@ object Application {
       system.terminate()
     }
 
-    implicit val clusterSingletonManagementWrapper: ClusterSingletonManagementWrapper = new ClusterSingletonManagerWrapper
+    implicit val clusterSingletonManagementWrapper: ClusterSingletonManagementWrapper = new ClusterSingletonManagementWrapper
 
-    val nodeId = s"Node ${config.getString("akka.remote.netty.tcp.port").toInt - 2550}"
-    val mockMessageConsumer = new MockMessageConsumer()
+    val mockMessageConsumer = new MessageConsumer
 
     //Thread.sleep(10000);
 

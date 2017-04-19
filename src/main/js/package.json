@@ -1,0 +1,18 @@
+{
+  "name": "akka-consistent-hash-message-publisher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "message-publisher.js",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "amqplib": "^0.5.1",
+    "lodash": "^4.17.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
