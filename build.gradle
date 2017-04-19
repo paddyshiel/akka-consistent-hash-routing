@@ -6,27 +6,27 @@ apply plugin: 'scala'
 repositories {
     mavenCentral()
     maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots"
+        url "http://spingo-oss.s3.amazonaws.com/repositories/releases"
     }
 }
 
-dependencies{
+dependencies {
     // Scala Library
-    compile group: 'org.scala-lang', name: 'scala-library', version: '2.12.1'
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.11.8'
 
     // Logging Dependencies
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 
-
     // Akka Dependencies
-    compile group: 'com.typesafe.akka', name: 'akka-cluster_2.12', version: '2.4.17'
-    compile group: 'com.typesafe.akka', name: 'akka-cluster-tools_2.12', version: '2.4.17'
-    compile group: 'com.typesafe.akka', name: 'akka-cluster-metrics_2.12', version: '2.4.17'
-    compile group: 'com.typesafe.akka', name: 'akka-slf4j_2.12', version: '2.4.17'
+    compile group: 'com.typesafe.akka', name: 'akka-cluster_2.11', version: '2.4.8'
+    compile group: 'com.typesafe.akka', name: 'akka-cluster-tools_2.11', version: '2.4.8'
+    compile group: 'com.typesafe.akka', name: 'akka-cluster-metrics_2.11', version: '2.4.8'
+    compile group: 'com.typesafe.akka', name: 'akka-slf4j_2.11', version: '2.4.8'
 
     // RabbitMq / Messaging Dependencies
-    compile group: 'com.github.sstone', name: 'amqp-client_2.11', version: '1.6-SNAPSHOT'
+    compile group: 'com.spingo', name: 'op-rabbit-core_2.11', version: '1.6.0'
+    compile group: 'com.spingo', name: 'op-rabbit-play-json_2.11', version: '1.6.0'
 
     testCompile "junit:junit:4.11"
 }

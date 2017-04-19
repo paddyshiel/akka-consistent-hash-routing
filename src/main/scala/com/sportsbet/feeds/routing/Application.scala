@@ -20,7 +20,7 @@ object Application {
     Cluster(system).registerOnMemberRemoved {
       system.registerOnTermination(System.exit(-1))
       system.scheduler.scheduleOnce(Duration(2, "seconds"))(System.exit(-1))(system.dispatcher)
-      system.shutdown()
+      system.terminate()
     }
 
     implicit val clusterSingletonManagementWrapper: ClusterSingletonManagementWrapper = new ClusterSingletonManagerWrapper
@@ -28,9 +28,9 @@ object Application {
     val nodeId = s"Node ${config.getString("akka.remote.netty.tcp.port").toInt - 2550}"
     val mockMessageConsumer = new MockMessageConsumer()
 
-    Thread.sleep(10000);
+    //Thread.sleep(10000);
 
-    mockMessageConsumer.routeDummyMessages(1000, 1000, nodeId)
+    //mockMessageConsumer.routeDummyMessages(1000, 1000, nodeId)
 
   }
 
